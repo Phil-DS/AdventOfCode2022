@@ -32,6 +32,8 @@ for n in G:
 
 G.remove_nodes_from(nodes_to_remove)
 
+# Useful bit of help here from the reddit.
+
 bit_index = {x: 1 << i for i, x in enumerate(sorted(G))}
 
 
@@ -49,7 +51,7 @@ def search(node, time, state, score, lut):
 
         new_score = score + new_time * data[n]['rate']
         new_state = state | bit_index[n]
-        
+
         search(n, new_time, new_state, new_score, lut)
     return lut
 
