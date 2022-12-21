@@ -1939,8 +1939,6 @@ for row in inp.split('\n'):
 lhs = data[data['root'][0]]()
 rhs = data[data['root'][1]]()
 
-import math
-
 if type(lhs) == complex:
     v = round((rhs - lhs.real)/lhs.imag)
 else:
